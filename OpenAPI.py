@@ -1,5 +1,3 @@
-#OPENAI_API_KEY=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")
-
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
