@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teen Health Coach</title>
+    <title>Health Coach App for Teenagers</title>
     <style>
         /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #A2D2FF, #FFC8DD);
+            background: linear-gradient(135deg, #A3B18A, #DDBEA9);
             color: #333;
             display: flex;
             justify-content: center;
@@ -20,7 +20,7 @@
 
         /* Form Container */
         .container {
-            background: white;
+            background: #FAF3E0;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -30,8 +30,13 @@
         }
 
         h2 {
-            color: #333;
-            margin-bottom: 15px;
+            color: #4A4E69;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #6D6875;
+            font-size: 14px;
         }
 
         /* Input Fields */
@@ -56,7 +61,7 @@
 
         /* Submit Button */
         .btn {
-            background: #FF577F;
+            background: #6D6875;
             color: white;
             border: none;
             padding: 12px;
@@ -68,7 +73,20 @@
         }
 
         .btn:hover {
-            background: #E0446D;
+            background: #4A4E69;
+        }
+
+        /* Icon Section */
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .icons img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
         }
 
         /* Responsive Design */
@@ -82,7 +100,7 @@
 <body>
 
     <div class="container">
-        <h2>Teen Health Coach</h2>
+        <h2>Health Coach App</h2>
         <p>Stay fit with a healthy diet, exercise, and good habits!</p>
 
         <form>
@@ -97,8 +115,8 @@
             </div>
 
             <div class="input-group">
-                <label for="height">Height (cm):</label>
-                <input type="number" id="height" placeholder="Enter your height" required>
+                <label for="height">Height (in inches):</label>
+                <input type="number" id="height" placeholder="Enter your height in inches" required>
             </div>
 
             <div class="input-group">
@@ -112,8 +130,8 @@
             </div>
 
             <div class="input-group">
-                <label for="weight">Weight (kg):</label>
-                <input type="number" id="weight" placeholder="Enter your weight" required>
+                <label for="weight">Weight (in pounds):</label>
+                <input type="number" id="weight" placeholder="Enter your weight in pounds" required>
             </div>
 
             <div class="input-group">
@@ -123,6 +141,12 @@
 
             <button type="submit" class="btn">Submit</button>
         </form>
+
+        <div class="icons">
+            <img src="Excercise.png" alt="Exercise Icon">
+            <img src="HealthCheck.png" alt="Health Check Icon">
+            <img src="lady.png" alt="Mindfulness Icon">
+        </div>
     </div>
 
 </body>
