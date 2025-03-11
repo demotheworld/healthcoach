@@ -106,6 +106,7 @@
             let gender = document.getElementById("gender").value;
             let weight = document.getElementById("weight").value;
             let diet = document.getElementById("diet").value.trim();
+			let foodpreference = document.getElementById("foodpreference").value.trim();
             
             if (name === "" || age === "" || height === "" || gender === "" || weight === "") {
                 alert("Please fill out all required fields.");
@@ -167,6 +168,10 @@
                 <input type="text" id="diet" placeholder="E.g., Vegan, Gluten-Free">
             </div>
 
+            <div class="input-group">
+                <label for="foodpreference">Enter any food preferences:</label>
+                <input type="text" id="foodpreference" placeholder="E.g., No Tomato, lots of cheese...">
+            </div>
             <button type="submit" class="btn">Submit</button>
         </form>
 
