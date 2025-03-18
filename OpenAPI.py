@@ -1,11 +1,32 @@
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
+from flask import Flask, jsonify, request
 
 load_dotenv()
 
 # Replace with your actual API key
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
+app = Flask(__name__)
+
+
+@app.route('/', methods=['GET'])
+def hello():
+    return jsonify({'message': 'Hello, World!'})
+
+@app.route('/items', methods=['POST'])
+def create_item():
+    data = request.get_json()
+    # Process data and save to database (or other storage)
+    return jsonify({'message': 'Item created successfully', 'data': data}), 201
+
+@app.route('/items/<int:item_id>', methods=['GET'])
+def get_item(item_id):
+    # Retrieve item from database based on item_id
+    return jsonify({'id': item_id, 'name': f'Item {item_id}'})
+
+
 def get_chatgpt_response(prompt):
     """Sends a prompt to the ChatGPT API and returns the response."""
     try:
@@ -20,6 +41,7 @@ def get_chatgpt_response(prompt):
         return f"An error occurred: {e}"
 
 if __name__ == "__main__":
+    app.run(debug=False)
     # Collect user details interactively
     name = input("Enter Name: ")
     age = input("Enter Age: ")
