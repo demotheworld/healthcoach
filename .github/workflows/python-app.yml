@@ -36,6 +36,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Create .env file
       run: echo "OPENAI_API_KEY=${{secrets.OPENAI_API_KEY }}" > .env
-    - name: Run main API
+    - name: Run main Python Program
       run: |
         python OpenAPI.py&
+    - name: Expose API
+      run: |
+          gh api https://api.github.com/repos/demotheworld/healthcoach/hello
