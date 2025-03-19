@@ -40,5 +40,7 @@ jobs:
       run: |
         python OpenAPI.py&
     - name: Expose API
+        - env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
           gh api https://api.github.com/repos/demotheworld/healthcoach/hello
