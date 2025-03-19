@@ -11,7 +11,7 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/hello', methods=['GET'])
 def hello():
     return jsonify({'message': 'Hello, World!'})
 
