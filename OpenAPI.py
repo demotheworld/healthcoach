@@ -1,7 +1,7 @@
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 load_dotenv()
 
@@ -10,6 +10,10 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    message = "Hello, World"
+    return render_template('index.html')
 
 @app.route('/hello', methods=['GET'])
 def hello():
@@ -41,6 +45,7 @@ def get_chatgpt_response(prompt):
         return f"An error occurred: {e}"
 
 if __name__ == "__main__":
+    app.run(debug=True)
     # Bind to PORT if defined, otherwise default to 5000.
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
