@@ -97,28 +97,24 @@
         }
     </style>
     <script>
-        function validateForm(event) {
+        async function validateForm(event) {
             event.preventDefault();
-            
+
             let name = document.getElementById("name").value.trim();
             let age = document.getElementById("age").value;
             let height = document.getElementById("height").value;
             let gender = document.getElementById("gender").value;
             let weight = document.getElementById("weight").value;
-            let diet = document.getElementById("diet").value.trim();
-			let foodpreference = document.getElementById("foodpreference").value.trim();
-            
+
             if (name === "" || age === "" || height === "" || gender === "" || weight === "") {
                 alert("Please fill out all required fields.");
                 return;
             }
-            
+
             if (age <= 0 || height <= 0 || weight <= 0) {
                 alert("Age, height, and weight must be positive values.");
                 return;
             }
-            
-            alert("Form submitted successfully!");
         }
     </script>
 </head>
@@ -133,25 +129,26 @@
         </div>
         <p style="font-size:10px"><b>Meet Health Coach,your all-in-one app for a healthier lifestyle! Simply enter your details, and Health Coach will give you recommendations based on your information. Get personalized diet recommendations, healthy habits, ideal sleep duration, and more. Take control of your well-being because a healthier you starts today!</b> </p>
 
-        <form onsubmit="validateForm(event)">
+        <form id="healthForm" onsubmit="validateForm()" action="/submit_data" method="post">
+
             <div class="input-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
+                <input name="name" type="text" id="name" placeholder="Enter your name" required>
             </div>
 
             <div class="input-group">
                 <label for="age">Age:</label>
-                <input type="number" id="age" placeholder="Enter your age" required>
+                <input name="age" type="number" id="age" placeholder="Enter your age" required>
             </div>
 
             <div class="input-group">
                 <label for="height">Height (in inches):</label>
-                <input type="number" id="height" placeholder="Enter your height in inches" required>
+                <input name="height" type="number" id="height" placeholder="Enter your height in inches" required>
             </div>
 
             <div class="input-group">
                 <label for="gender">Gender:</label>
-                <select id="gender" required>
+                <select name="gender" id="gender" required>
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -161,17 +158,17 @@
 
             <div class="input-group">
                 <label for="weight">Weight (in pounds):</label>
-                <input type="number" id="weight" placeholder="Enter your weight in pounds" required>
+                <input name="weight" type="number" id="weight" placeholder="Enter your weight in pounds" required>
             </div>
 
             <div class="input-group">
                 <label for="diet">Dietary Restrictions for Reccomended Diet:</label>
-                <input type="text" id="diet" placeholder="E.g., Vegan, Gluten-Free">
+                <input name="diet"  type="text" id="diet" placeholder="E.g., Vegan, Gluten-Free">
             </div>
 
             <div class="input-group">
                 <label for="foodpreference">Enter any Food Preferences for Reccomended Diet:</label>
-                <input type="text" id="foodpreference" placeholder="E.g., No Tomato, lots of cheese...">
+                <input name="foodpreference" type="text" id="foodpreference" placeholder="E.g., No Tomato, lots of cheese...">
             </div>
             <button type="submit" class="btn">Submit</button>
         </form>
