@@ -98,8 +98,6 @@
     </style>
     <script>
         async function validateForm(event) {
-            event.preventDefault();
-
             let name = document.getElementById("name").value.trim();
             let age = document.getElementById("age").value;
             let height = document.getElementById("height").value;
@@ -162,12 +160,12 @@
             </div>
 
             <div class="input-group">
-                <label for="diet">Dietary Restrictions for Reccomended Diet:</label>
+                <label for="diet">Dietary Restrictions for Recommended Diet:</label>
                 <input name="diet"  type="text" id="diet" placeholder="E.g., Vegan, Gluten-Free">
             </div>
 
             <div class="input-group">
-                <label for="foodpreference">Enter any Food Preferences for Reccomended Diet:</label>
+                <label for="foodpreference">Enter any Food Preferences for Recommended Diet:</label>
                 <input name="foodpreference" type="text" id="foodpreference" placeholder="E.g., No Tomato, lots of cheese...">
             </div>
             <button type="submit" class="btn">Submit</button>
