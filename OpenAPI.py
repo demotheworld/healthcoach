@@ -43,7 +43,7 @@ def submit_data():
                   "What are some healthy habits to adopt? \n"
                   "How much sleep should I be getting daily? \n"
                   "How much water should I intake daily? \n"
-                  "What is the healthy BMI range for me?\n"
+                  "What is my BMI and healthy range for me?\n"
                   "give output in HTML format along with bullet points")
     response =  get_chatgpt_response(user_input)
     response = response.replace("```html", "")
