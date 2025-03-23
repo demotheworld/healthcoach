@@ -33,8 +33,8 @@ def submit_data():
 
     # Compose the query dynamically
     user_input = (f"Name: {name_input} \n"
-                  f"Age: {age_input} Height: {height_input} \n"
-                  f"Weight: {weight_input} \n"
+                  f"Age: {age_input} Height: {height_input} inches\n"
+                  f"Weight: {weight_input} lb\n"
                   f"Gender: {gender_input} \n"
                   f"[USER_REQUEST]: Dietary Restriction: {diet_input} \n\n"
                   f"[USER_REQUEST]: Food Preferences for Recommended Diet: {foodpreference_input} \n\n"
