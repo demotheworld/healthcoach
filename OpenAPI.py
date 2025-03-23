@@ -31,14 +31,6 @@ def submit_data():
     diet_input = request.form.get('diet')
     foodpreference_input = request.form.get('foodpreference')
 
-    # Collect user details interactively
-    #name = input("Enter Name: ")
-    #age = input("Enter Age: ")
-    #height = input("Enter Height (e.g., 5 ft 11 inches): ")
-    #weight = input("Enter Weight (e.g., 170 lb): ")
-    #gender = input("Enter Gender: ")
-    #dietary_restrictions = input("Enter any Dietary Restrictions (e.g., No Dairy): ")
-
     # Compose the query dynamically
     user_input = (f"Name: {name_input} \n"
                   f"Age: {age_input} Height: {height_input} \n"
@@ -52,13 +44,11 @@ def submit_data():
                   "How much sleep should I be getting daily? \n"
                   "How much water should I intake daily? \n"
                   "What is the healthy BMI range?\n"
-                  "give output in HTML format")
+                  "give output in HTML format along with bullet points")
     response =  get_chatgpt_response(user_input)
-    # response = response.replace("&lt;", "<")
-    # response = response.replace("&gt;", ">")
     response = response.replace("```html", "")
     response = response.replace("```", "")
-    #print("ChatGPT's response:", response)
+    response = response.replace("This HTML document%", "")
     return render_template('result.html', response_output=response)
 
 def get_chatgpt_response(prompt):
