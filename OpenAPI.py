@@ -48,7 +48,7 @@ def submit_data():
     response =  get_chatgpt_response(user_input)
     response = response.replace("```html", "")
     response = response.replace("```", "")
-    response = response.replace("This HTML document%", "")
+    response = response.replace("This HTML%", "")
     return render_template('result.html', response_output=response)
 
 def get_chatgpt_response(prompt):
